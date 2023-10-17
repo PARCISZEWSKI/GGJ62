@@ -1,4 +1,3 @@
-res://Scenes/main.tscn
 res://Scenes/player.tscn
-res://Scripts/player.gd
+res://Scenes/main.tscn
 res://Scenes/creature_1.tscn

@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://clmaxb7ykcgtb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_m5b16"]
-[ext_resource type="Texture2D" uid="uid://dkxyu1p2jqyqk" path="res://icon.svg" id="2_g73km"]
+[ext_resource type="Texture2D" uid="uid://sltpe0jbcuu3" path="res://Assets/Visual/galdraM3.png" id="2_bh8u2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqnyb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g73km")
+"texture": ExtResource("2_bh8u2")
 }],
 "loop": true,
 "name": &"default",
