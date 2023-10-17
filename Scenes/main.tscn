@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnk5xeboddctp"]
+[gd_scene load_steps=5 format=3 uid="uid://bnk5xeboddctp"]
 
 [ext_resource type="PackedScene" uid="uid://clmaxb7ykcgtb" path="res://Scenes/player.tscn" id="1_atxnc"]
+[ext_resource type="Texture2D" uid="uid://ct8uqc0hf4imn" path="res://Assets/Visual/GJ-bakgrunnur.png" id="1_w61iq"]
 [ext_resource type="PackedScene" uid="uid://btnh3lyqf4bw3" path="res://Scenes/rat.tscn" id="2_di3bb"]
 [ext_resource type="PackedScene" uid="uid://5yow7ugv77wn" path="res://Scenes/spawner.tscn" id="3_j316c"]
 
 [node name="main" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(80, 40)
+texture = ExtResource("1_w61iq")
 
 [node name="player" parent="." instance=ExtResource("1_atxnc")]
 position = Vector2(80, 40)
