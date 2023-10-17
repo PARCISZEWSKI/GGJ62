@@ -1,10 +1,12 @@
 extends Node2D
 
-var plant_1 = preload("res://Scenes/creature_1.tscn")
+@onready var plant_1: PackedScene = preload("res://Scenes/creature_1.tscn")
 # Called when the node enters the scene tree for the first time.
 func spawn(place):
-	plant_1.instantiate()
-	plant_1.position = place
+	var plant = plant_1.instantiate()
+	plant.position = place
+	get_parent().add_child(plant)
+	
 
 func _ready():
 	pass # Replace with function body.
