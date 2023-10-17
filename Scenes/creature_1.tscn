@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgyxfhylpd0lg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0gcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ik6j"]
+
+[sub_resource type="Gradient" id="Gradient_gsv73"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5svg8"]
+gradient = SubResource("Gradient_gsv73")
+width = 1
+height = 1
+
+[node name="creature1" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_q0gcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7ik6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(60, 60)
+texture = SubResource("GradientTexture2D_5svg8")
