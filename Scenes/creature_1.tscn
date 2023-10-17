@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgyxfhylpd0lg"]
 
-[ext_resource type="Texture2D" uid="uid://duu6h84w62btn" path="res://Assets/Visual/GJ-grasker.png" id="1_i20kw"]
+[ext_resource type="Texture2D" uid="uid://dq1f7qbtbyhdl" path="res://Assets/Visual/GJ-grsker-ljóst.png" id="1_784vb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0gcp"]
 
@@ -8,7 +8,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i20kw")
+"texture": ExtResource("1_784vb")
 }],
 "loop": true,
 "name": &"default",
