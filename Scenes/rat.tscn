@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/rat.gd" id="1_app5r"]
 [ext_resource type="Texture2D" uid="uid://boxlidayov2wk" path="res://Assets/Visual/GJ-rotta2.png" id="2_djrrj"]
-[ext_resource type="Texture2D" uid="uid://v4s1by70p6yr" path="res://Assets/Visual/GJ-leðurB.png" id="3_0gtm0"]
+[ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="4_6n3l5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fhh3j"]
 radius = 3.25
@@ -16,14 +16,6 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_0gtm0")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
 }]
 
 [node name="rat" type="CharacterBody2D"]
@@ -35,4 +27,5 @@ shape = SubResource("CircleShape2D_fhh3j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cxny6")
-animation = &"new_animation"
+
+[node name="health" parent="." instance=ExtResource("4_6n3l5")]

@@ -7,7 +7,7 @@ var animation_list = ["default", "new_animation"]
 var direction = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite2D.animation = animation_list.pick_random()
+	#$AnimatedSprite2D.animation = animation_list.pick_random()
 	pass
 
 
@@ -18,3 +18,4 @@ func _physics_process(delta):
 	
 func set_target(target):
 	focus = target
+	

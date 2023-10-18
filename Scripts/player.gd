@@ -21,8 +21,7 @@ func _ready():
 	$Camera2D.limit_right = global_position.x + play_area.x
 	$Camera2D.limit_bottom = global_position.y + play_area.y
 	$Camera2D.limit_left = global_position.x - play_area.x
-	$resource.resource_add(5)
-	
+	$resource.resource_add(5)	
 	pass # Replace with function body.
 
 
