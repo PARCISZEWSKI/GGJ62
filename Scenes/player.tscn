@@ -33,6 +33,7 @@ sprite_frames = SubResource("SpriteFrames_uqnyb")
 animation = &"front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
 position_smoothing_speed = 10.0
 
 [node name="ui" parent="Camera2D" instance=ExtResource("4_0ukde")]

@@ -13,6 +13,7 @@ texture = ExtResource("1_w61iq")
 
 [node name="player" parent="." instance=ExtResource("1_atxnc")]
 position = Vector2(80, 40)
+scale_lean = 0.5
 
 [node name="rat" parent="." instance=ExtResource("2_di3bb")]
 position = Vector2(141, 71)

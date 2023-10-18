@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6rmyxnlpanan"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_26edv"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_26edv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -15.5
+offset_right = 67.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "return to menu?"
+
+[node name="pause" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_right = 28.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "paused"
+
+[connection signal="button_down" from="CanvasLayer/menu" to="." method="_on_menu_button_down"]
