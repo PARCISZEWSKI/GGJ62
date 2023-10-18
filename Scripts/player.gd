@@ -35,11 +35,13 @@ func _ready():
 func _process(delta):
 	if get_tree().paused == false:
 		$Camera2D/ui.show()
+	
+		if Input.is_action_just_pressed("mouse_one") and $resource.resource_spend(1):
+			spawn(get_global_mouse_position())
+		if Input.is_action_just_pressed("escape"):
+			pause()#$Camera2D.add_child("")
+	else:
+		$Camera2D/ui.hide()
 	mouse_follow()
-	if Input.is_action_just_pressed("mouse_one") and $resource.resource_spend(1):
-		spawn(get_global_mouse_position())
-	if Input.is_action_just_pressed("escape"):
-		pause()#$Camera2D.add_child("")
-		
 func _on_resource_update(new):
 	$Camera2D/ui.resource_text_update(new)
