@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://boxlidayov2wk" path="res://Assets/Visual/GJ-rotta2.png" id="2_djrrj"]
 [ext_resource type="Texture2D" uid="uid://v4s1by70p6yr" path="res://Assets/Visual/GJ-leðurB.png" id="3_0gtm0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0hn1"]
-size = Vector2(20, 9)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhh3j"]
+radius = 3.25
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cxny6"]
 animations = [{
@@ -30,8 +30,8 @@ animations = [{
 script = ExtResource("1_app5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_f0hn1")
+position = Vector2(0.75, 0)
+shape = SubResource("CircleShape2D_fhh3j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cxny6")

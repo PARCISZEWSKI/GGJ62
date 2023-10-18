@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clmaxb7ykcgtb"]
+[gd_scene load_steps=7 format=3 uid="uid://clmaxb7ykcgtb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_m5b16"]
 [ext_resource type="Texture2D" uid="uid://bpo4uwor881rk" path="res://Assets/Visual/galdraM-bak 3.png" id="2_c13gs"]
 [ext_resource type="Texture2D" uid="uid://giibgfdlh54q" path="res://Assets/Visual/GJ-galdraM.png" id="3_ej8tm"]
+[ext_resource type="PackedScene" uid="uid://dua670j23ok1o" path="res://Scenes/modules/ui.tscn" id="4_0ukde"]
+[ext_resource type="PackedScene" uid="uid://ds6c7ctltm0hl" path="res://Scenes/modules/resource.tscn" id="4_adr84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqnyb"]
 animations = [{
@@ -32,3 +34,8 @@ animation = &"front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_speed = 10.0
+
+[node name="ui" parent="Camera2D" instance=ExtResource("4_0ukde")]
+
+[node name="resource" parent="." instance=ExtResource("4_adr84")]
+position = Vector2(8.25, 10.75)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dua670j23ok1o"]
+
+[ext_resource type="Script" path="res://Scripts/modules/ui.gd" id="1_vm6a4"]
+
+[sub_resource type="Theme" id="Theme_vc8mc"]
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_vm6a4")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_bottom = 26.0
+grow_horizontal = 0
+theme = SubResource("Theme_vc8mc")
+text = "test"

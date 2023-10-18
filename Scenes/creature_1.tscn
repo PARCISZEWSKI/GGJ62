@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgyxfhylpd0lg"]
+[gd_scene load_steps=7 format=3 uid="uid://cgyxfhylpd0lg"]
 
 [ext_resource type="Script" path="res://Scripts/creature_1.gd" id="1_3q0oq"]
 [ext_resource type="Texture2D" uid="uid://dq1f7qbtbyhdl" path="res://Assets/Visual/GJ-grsker-ljóst.png" id="1_784vb"]
 [ext_resource type="Texture2D" uid="uid://ctyyvrkp5teyg" path="res://Assets/Visual/GJ-ber.png" id="2_v31rx"]
 [ext_resource type="Texture2D" uid="uid://ck56c8klivom2" path="res://Assets/Visual/GJ- scuass.png" id="3_g1u4x"]
+[ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="5_a0hy4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ik6j"]
 animations = [{
@@ -38,3 +39,8 @@ script = ExtResource("1_3q0oq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7ik6j")
 animation = &"new_animation_1"
+
+[node name="health" parent="." instance=ExtResource("5_a0hy4")]
+position = Vector2(8.25, 10.75)
+health_current = 100
+health_max = 100
