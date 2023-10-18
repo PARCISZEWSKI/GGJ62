@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/rat.gd" id="1_app5r"]
 [ext_resource type="Texture2D" uid="uid://boxlidayov2wk" path="res://Assets/Visual/GJ-rotta2.png" id="2_djrrj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nn2bx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0hn1"]
+size = Vector2(20, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cxny6"]
 animations = [{
@@ -20,7 +21,8 @@ animations = [{
 script = ExtResource("1_app5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_nn2bx")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_f0hn1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cxny6")

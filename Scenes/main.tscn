@@ -7,7 +7,7 @@
 
 [node name="main" type="Node2D"]
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="." groups=["background"]]
 position = Vector2(80, 40)
 texture = ExtResource("1_w61iq")
 

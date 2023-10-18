@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgyxfhylpd0lg"]
+[gd_scene load_steps=3 format=3 uid="uid://cgyxfhylpd0lg"]
 
 [ext_resource type="Texture2D" uid="uid://dq1f7qbtbyhdl" path="res://Assets/Visual/GJ-grsker-ljóst.png" id="1_784vb"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0gcp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ik6j"]
 animations = [{
@@ -15,10 +13,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="creature1" type="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_q0gcp")
+[node name="creature1" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7ik6j")
