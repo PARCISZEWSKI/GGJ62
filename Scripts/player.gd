@@ -25,6 +25,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	mouse_follow()
-	if Input.is_action_pressed("mouse_one"):
+	if Input.is_action_just_pressed("mouse_one"):
 		spawn(get_global_mouse_position())
 		

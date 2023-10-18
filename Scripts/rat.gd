@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 @export var speed = 10
 @onready var focus = get_tree().get_first_node_in_group("player")
+var animation_list = ["default", "new_animation"]
 
 var direction = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite2D.animation = animation_list.pick_random()
 	pass
 
 
