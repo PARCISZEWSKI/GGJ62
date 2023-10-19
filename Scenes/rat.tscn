@@ -18,7 +18,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="rat" type="CharacterBody2D"]
+[node name="rat" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_app5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,6 +26,7 @@ position = Vector2(0.75, 0)
 shape = SubResource("CircleShape2D_fhh3j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_cxny6")
 
 [node name="health" parent="." instance=ExtResource("4_6n3l5")]

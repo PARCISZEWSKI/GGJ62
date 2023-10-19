@@ -5,6 +5,9 @@ extends CharacterBody2D
 var animation_list = ["default", "new_animation"]
 
 var direction = Vector2.ZERO
+
+func take_damage(damage):
+	$health.change_health(-damage)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#$AnimatedSprite2D.animation = animation_list.pick_random()

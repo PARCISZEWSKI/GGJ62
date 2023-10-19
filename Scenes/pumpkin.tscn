@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8g4telmp04bq"]
+
+[ext_resource type="Script" path="res://Scripts/pumpkin.gd" id="1_8iyh0"]
+[ext_resource type="Texture2D" uid="uid://dq1f7qbtbyhdl" path="res://Assets/Visual/GJ-grsker-ljóst.png" id="2_6vsjy"]
+[ext_resource type="Texture2D" uid="uid://ctyyvrkp5teyg" path="res://Assets/Visual/GJ-ber.png" id="3_sxcil"]
+[ext_resource type="Texture2D" uid="uid://ck56c8klivom2" path="res://Assets/Visual/GJ- scuass.png" id="4_ftwhl"]
+[ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="5_lg2jj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ik6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6vsjy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sxcil")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ftwhl")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lmxm2"]
+
+[node name="pumpkin" type="Node2D"]
+script = ExtResource("1_8iyh0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7ik6j")
+
+[node name="health" parent="." instance=ExtResource("5_lg2jj")]
+position = Vector2(8.25, 10.75)
+health_current = 100
+health_max = 100
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lmxm2")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

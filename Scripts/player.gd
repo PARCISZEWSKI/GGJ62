@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var plant_1: PackedScene = preload("res://Scenes/creature_1.tscn")
+@onready var plant_1: PackedScene = preload("res://Scenes/pumpkin.tscn")
 @onready var pause_menu = preload("res://Scenes/pause_menu.tscn")
 @onready var play_area = get_tree().get_first_node_in_group("background").texture.get_size()/2
 @export var scale_lean = 0.5

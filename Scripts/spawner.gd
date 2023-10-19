@@ -4,7 +4,7 @@ var enemy_1 = preload("res://Scenes/rat.tscn")
 
 
 
-func spawn(monster, target):
+func spawn(monster, _target):
 	var enemy = monster.instantiate()
 	#enemy.set_target(target)
 	enemy.global_position =Vector2(randi_range(0, get_viewport_rect().size.x), randi_range(-get_viewport_rect().size.y, 0))
