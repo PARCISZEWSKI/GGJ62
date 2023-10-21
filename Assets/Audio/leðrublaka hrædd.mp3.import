@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2yq08aalbleu"
+path="res://.godot/imported/leðrublaka hrædd.mp3-0cdbc9b87d6d936fcc0ddf1842a831a1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/leðrublaka hrædd.mp3"
+dest_files=["res://.godot/imported/leðrublaka hrædd.mp3-0cdbc9b87d6d936fcc0ddf1842a831a1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

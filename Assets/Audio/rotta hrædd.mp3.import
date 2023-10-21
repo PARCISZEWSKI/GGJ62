@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wgsvf725c6g7"
+path="res://.godot/imported/rotta hrædd.mp3-3cdec26d44cf769ef633bd8c75e1815a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/rotta hrædd.mp3"
+dest_files=["res://.godot/imported/rotta hrædd.mp3-3cdec26d44cf769ef633bd8c75e1815a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
