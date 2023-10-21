@@ -11,4 +11,4 @@ func _process(delta):
 	pass
 
 func resource_text_update(amount):
-	$Label.text = "Resources: " + str(amount)
+	$Label.text = "Rotation " + str(amount)

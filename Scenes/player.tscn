@@ -1,11 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://clmaxb7ykcgtb"]
+[gd_scene load_steps=11 format=3 uid="uid://clmaxb7ykcgtb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_m5b16"]
 [ext_resource type="Texture2D" uid="uid://bpo4uwor881rk" path="res://Assets/Visual/galdraM-bak 3.png" id="2_c13gs"]
 [ext_resource type="Texture2D" uid="uid://giibgfdlh54q" path="res://Assets/Visual/GJ-galdraM.png" id="3_ej8tm"]
 [ext_resource type="PackedScene" uid="uid://dua670j23ok1o" path="res://Scenes/modules/ui.tscn" id="4_0ukde"]
+[ext_resource type="Texture2D" uid="uid://dkyxkiraoanap" path="res://Assets/Visual/spritesheeet.png" id="4_7ef13"]
 [ext_resource type="PackedScene" uid="uid://ds6c7ctltm0hl" path="res://Scenes/modules/resource.tscn" id="4_adr84"]
 [ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="6_4fcsm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llngm"]
+atlas = ExtResource("4_7ef13")
+region = Rect2(20, 13, 12, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqnyb"]
 animations = [{
@@ -23,6 +28,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llngm")
+}],
+"loop": true,
+"name": &"right",
 "speed": 5.0
 }]
 
@@ -58,5 +71,8 @@ shape = SubResource("CircleShape2D_pjxpq")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(8, 11)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
