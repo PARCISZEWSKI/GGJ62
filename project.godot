@@ -25,6 +25,11 @@ window/size/window_height_override=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 
+[gui]
+
+theme/custom="res://Assets/main_theme.tres"
+theme/custom_font="res://Assets/retro_computer_personal_use.ttf"
+
 [input]
 
 mouse_one={

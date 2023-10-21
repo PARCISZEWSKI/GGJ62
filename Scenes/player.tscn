@@ -30,6 +30,11 @@ animations = [{
 "name": &"front",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_llngm")
@@ -48,7 +53,7 @@ script = ExtResource("1_m5b16")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uqnyb")
-animation = &"front"
+animation = &"left"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3

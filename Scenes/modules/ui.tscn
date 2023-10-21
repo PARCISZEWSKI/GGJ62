@@ -1,18 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dua670j23ok1o"]
+[gd_scene load_steps=6 format=3 uid="uid://dua670j23ok1o"]
 
 [ext_resource type="Script" path="res://Scripts/modules/ui.gd" id="1_vm6a4"]
+[ext_resource type="Theme" uid="uid://dcn3fwgv8qlfn" path="res://Assets/main_theme.tres" id="2_lknqd"]
+[ext_resource type="Texture2D" uid="uid://dkyxkiraoanap" path="res://Assets/Visual/spritesheeet.png" id="2_v7qav"]
 
-[sub_resource type="Theme" id="Theme_vc8mc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d28qn"]
+atlas = ExtResource("2_v7qav")
+region = Rect2(50, 4, 6, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwp3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d28qn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_vm6a4")
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -30.0
-offset_bottom = 26.0
-grow_horizontal = 0
-theme = SubResource("Theme_vc8mc")
-text = "test"
+offset_right = 20.0
+offset_bottom = 18.0
+theme = ExtResource("2_lknqd")
+text = "1"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 9)
+scale = Vector2(1, 0.928571)
+sprite_frames = SubResource("SpriteFrames_xwp3n")

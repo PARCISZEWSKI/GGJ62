@@ -6,6 +6,13 @@ extends Node2D
 @export var scale_lean = 0.5
 @export var damage = 50
 
+const directions = [
+	"right",
+	"back",
+	"right",
+	"front",
+]
+
 # Called when the node enters the scene tree for the first time.
 func take_damage(damage):
 	$health.change_health(-damage)
@@ -30,51 +37,34 @@ func _ready():
 	$Camera2D.limit_right = global_position.x + play_area.x
 	$Camera2D.limit_bottom = global_position.y + play_area.y
 	$Camera2D.limit_left = global_position.x - play_area.x
-	$resource.resource_add(5)	
+	$resource.resource_add(5)
 	pass # Replace with function body.
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Camera2D/ui.resource_text_update(get_angle_to(get_global_mouse_position()))
-	var mouse_pos = get_global_mouse_position()
-	var mouse_angle = get_angle_to(mouse_pos)
-	var unit = PI/6
-	rotation = 7*unit
-	#print(get_angle_to($Marker2D.global_position))
-	#if mouse_angle > unit and mouse_angle > 4*unit:
-		#$AnimatedSprite2D.play("back")
-	#else:
-		#$AnimatedSprite2D.play("front")
-		#$AnimatedSprite2D.play("right")
-		#$AnimatedSprite2D.flip_h = false
-	#if mouse_angle > 0.9 and mouse_angle > 2.4:
-		#$AnimatedSprite2D.play("back")
-	#if mouse_angle > 2.4 and mouse_angle < 3.9:
-		#$AnimatedSprite2D.play("right")
-		#$AnimatedSprite2D.flip_h = true
-	#if mouse_angle > 3.9 and mouse_angle < 5.4:
-		#$AnimatedSprite2D.play("front")
-	#if mouse_angle > 5.4 and mouse_angle > 0.9:
-		#$AnimatedSprite2D.play("right")
-		#$AnimatedSprite2D.flip_h = false
-	#if mouse_angle < 2.1 and mouse_angle > 0.9:
-		#$AnimatedSprite2D.play("front")
-	#else:
-		#$AnimatedSprite2D.play("right")
-		#$AnimatedSprite2D.flip_h = true
+	
+	var mouse_pos = get_local_mouse_position()
+	
+	var direction_mouse = mouse_pos.normalized()
+	var direction_id = int(4.0 * (direction_mouse.rotated(PI / 4.0).angle() + PI) / TAU)
+	$AnimatedSprite2D.play(directions[direction_id])
+	if direction_id == 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 	if get_tree().paused == false:
 		$Camera2D/ui.show()
 	
 		if Input.is_action_just_pressed("mouse_one") and $resource.resource_spend(1):
-			spawn(mouse_pos)
+			spawn(get_global_mouse_position())
 		if Input.is_action_just_pressed("escape"):
 			pause()#$Camera2D.add_child("")
 	else:
 		$Camera2D/ui.hide()
 	mouse_follow()
 func _on_resource_update(new):
-	$Camera2D/ui.resource_text_update(get_angle_to(get_global_mouse_position()))#new)
+	$Camera2D/ui.resource_text_update(new)
 
 
 func _on_timer_timeout():

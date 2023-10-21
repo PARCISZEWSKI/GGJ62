@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dcn3fwgv8qlfn"]
+
+[ext_resource type="FontFile" uid="uid://057gaqtd50rc" path="res://Assets/retro_computer_personal_use.ttf" id="1_fg1hy"]
+
+[resource]
+default_font = ExtResource("1_fg1hy")
+default_font_size = 11
