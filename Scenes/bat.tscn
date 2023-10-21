@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkunk4r7r61fk"]
+
+[ext_resource type="Script" path="res://Scripts/bat.gd" id="1_wn4nr"]
+[ext_resource type="Texture2D" uid="uid://dkyxkiraoanap" path="res://Assets/Visual/spritesheeet.png" id="2_gcx0c"]
+[ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="3_7dj70"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhh3j"]
+radius = 3.25
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej2og"]
+atlas = ExtResource("2_gcx0c")
+region = Rect2(2, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w4uy"]
+atlas = ExtResource("2_gcx0c")
+region = Rect2(16, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tekp"]
+atlas = ExtResource("2_gcx0c")
+region = Rect2(30, 0, 14, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxny6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej2og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w4uy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tekp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bat" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_wn4nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.75, 0)
+shape = SubResource("CircleShape2D_fhh3j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 0)
+sprite_frames = SubResource("SpriteFrames_cxny6")
+
+[node name="health" parent="." instance=ExtResource("3_7dj70")]
+health_current = 10
+health_max = 10
+
+[connection signal="death" from="health" to="." method="_on_health_death"]

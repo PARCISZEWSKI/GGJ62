@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var speed = 15
+@export var speed = 25
 @onready var focus = get_tree().get_first_node_in_group("player")
 @onready var play_area = get_tree().get_first_node_in_group("background").texture.get_size()/2
 #var animation_list = ["default", "new_animation"]
-@export var damage = 5
+@export var damage = 10
 var direction = Vector2.ZERO
 var dead = false
 

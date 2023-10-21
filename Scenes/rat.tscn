@@ -1,17 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://btnh3lyqf4bw3"]
+[gd_scene load_steps=11 format=3 uid="uid://btnh3lyqf4bw3"]
 
 [ext_resource type="Script" path="res://Scripts/rat.gd" id="1_app5r"]
-[ext_resource type="Texture2D" uid="uid://boxlidayov2wk" path="res://Assets/Visual/GJ-rotta2.png" id="2_djrrj"]
+[ext_resource type="Texture2D" uid="uid://dkyxkiraoanap" path="res://Assets/Visual/spritesheeet.png" id="2_b2le2"]
 [ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="4_6n3l5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fhh3j"]
 radius = 3.25
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0encg"]
+atlas = ExtResource("2_b2le2")
+region = Rect2(0, 36, 20, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn2p4"]
+atlas = ExtResource("2_b2le2")
+region = Rect2(20, 36, 20, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kptnt"]
+atlas = ExtResource("2_b2le2")
+region = Rect2(40, 36, 20, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpgyx"]
+atlas = ExtResource("2_b2le2")
+region = Rect2(0, 45, 20, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ema1"]
+atlas = ExtResource("2_b2le2")
+region = Rect2(20, 45, 20, 9)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cxny6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_djrrj")
+"texture": SubResource("AtlasTexture_0encg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn2p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kptnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpgyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ema1")
 }],
 "loop": true,
 "name": &"default",

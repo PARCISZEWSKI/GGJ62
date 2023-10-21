@@ -1,6 +1,7 @@
 extends Node2D
 
 var enemy_1 = preload("res://Scenes/rat.tscn")
+var enemy_2 = preload("res://Scenes/bat.tscn")
 @export var wave = 0
 @export var amount = 1
 @onready var area = get_tree().get_first_node_in_group("background")
@@ -24,4 +25,5 @@ func _on_timer_timeout():
 	if wave % 10 == 0:
 		amount += 1
 	spawn(enemy_1, amount)
-	
+	if wave > 10:
+		spawn(enemy_2, amount - 1)
