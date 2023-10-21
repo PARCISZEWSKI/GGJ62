@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://clmaxb7ykcgtb"]
+[gd_scene load_steps=9 format=3 uid="uid://clmaxb7ykcgtb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_m5b16"]
 [ext_resource type="Texture2D" uid="uid://bpo4uwor881rk" path="res://Assets/Visual/galdraM-bak 3.png" id="2_c13gs"]
 [ext_resource type="Texture2D" uid="uid://giibgfdlh54q" path="res://Assets/Visual/GJ-galdraM.png" id="3_ej8tm"]
 [ext_resource type="PackedScene" uid="uid://dua670j23ok1o" path="res://Scenes/modules/ui.tscn" id="4_0ukde"]
 [ext_resource type="PackedScene" uid="uid://ds6c7ctltm0hl" path="res://Scenes/modules/resource.tscn" id="4_adr84"]
+[ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="6_4fcsm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqnyb"]
 animations = [{
@@ -25,6 +26,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjxpq"]
+radius = 5.38516
+
 [node name="Player" type="Node2D" groups=["player"]]
 process_mode = 3
 script = ExtResource("1_m5b16")
@@ -41,3 +45,18 @@ position_smoothing_speed = 10.0
 
 [node name="resource" parent="." instance=ExtResource("4_adr84")]
 position = Vector2(8.25, 10.75)
+
+[node name="health" parent="." instance=ExtResource("6_4fcsm")]
+health_current = 100
+health_max = 100
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 8)
+shape = SubResource("CircleShape2D_pjxpq")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

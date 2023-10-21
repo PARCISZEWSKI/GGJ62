@@ -4,9 +4,12 @@ extends Node2D
 @onready var pause_menu = preload("res://Scenes/pause_menu.tscn")
 @onready var play_area = get_tree().get_first_node_in_group("background").texture.get_size()/2
 @export var scale_lean = 0.5
-
+@export var damage = 50
 
 # Called when the node enters the scene tree for the first time.
+func take_damage(damage):
+	$health.change_health(-damage)
+
 func spawn(place):
 	var plant = plant_1.instantiate()
 	plant.position = place
@@ -45,3 +48,11 @@ func _process(delta):
 	mouse_follow()
 func _on_resource_update(new):
 	$Camera2D/ui.resource_text_update(new)
+
+
+func _on_timer_timeout():
+	for body in $Area2D.get_overlapping_bodies():
+		if body.is_in_group("enemy"):
+			#print(body)
+			take_damage(body.damage)
+			body.take_damage(damage)

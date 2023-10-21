@@ -14,6 +14,6 @@ func _ready():
 func _on_timer_timeout():
 	for body in $Area2D.get_overlapping_bodies():
 		if body.is_in_group("enemy"):
-			print(body)
+			#print(body)
 			body.take_damage(damage)
 			
