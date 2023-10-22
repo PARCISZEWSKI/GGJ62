@@ -1,5 +1,6 @@
 extends CharacterBody2D
-
+@onready var audio_1 = preload("res://Assets/Audio/rotta hljóð 1.mp3")
+@onready var audio_2 = preload("res://Assets/Audio/rotta hrædd.mp3")
 @export var speed = 15
 @onready var focus = get_tree().get_first_node_in_group("player")
 @onready var play_area = get_tree().get_first_node_in_group("background").texture.get_size()/2
@@ -27,8 +28,7 @@ func _ready():
 	$AnimatedSprite2D.play("default")
 	if (focus.global_position.x + play_area.x)/2 > global_position.x:
 		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
-	#$AnimatedSprite2D.animation = animation_list.pick_random()
-	pass
+	$Timer.wait_time = randi_range(1, 3)
 
 
 func _physics_process(delta):
@@ -53,6 +53,15 @@ func set_target(target):
 
 func _on_health_death():
 	if !dead:
+		$AudioStreamPlayer2D.stop()
 		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
 		$CollisionShape2D.disabled = true
+		$AudioStreamPlayer2D.stream = audio_2
+		$AudioStreamPlayer2D.play()
 	dead = true
+
+
+func _on_timer_timeout():
+	$AudioStreamPlayer2D.play()
+	$Timer.wait_time = randi_range(1, 10)
+	$Timer.start()

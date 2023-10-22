@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clmaxb7ykcgtb"]
+[gd_scene load_steps=12 format=3 uid="uid://clmaxb7ykcgtb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_m5b16"]
 [ext_resource type="Texture2D" uid="uid://bpo4uwor881rk" path="res://Assets/Visual/galdraM-bak 3.png" id="2_c13gs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkyxkiraoanap" path="res://Assets/Visual/spritesheeet.png" id="4_7ef13"]
 [ext_resource type="PackedScene" uid="uid://ds6c7ctltm0hl" path="res://Scenes/modules/resource.tscn" id="4_adr84"]
 [ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="6_4fcsm"]
+[ext_resource type="AudioStream" uid="uid://dpd0om486rg4h" path="res://Assets/Audio/setja.niður-Plöntur.mp3" id="8_3bdev"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llngm"]
 atlas = ExtResource("4_7ef13")
@@ -79,5 +80,9 @@ autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(8, 11)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_3bdev")
+bus = &"Effects"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -18,6 +18,7 @@ func take_damage(damage):
 	$health.change_health(-damage)
 
 func spawn(place):
+	$AudioStreamPlayer2D.play()
 	var plant = plant_1.instantiate()
 	plant.position = place
 	get_parent().add_child(plant)
