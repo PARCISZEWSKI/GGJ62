@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnk5xeboddctp"]
+[gd_scene load_steps=7 format=3 uid="uid://bnk5xeboddctp"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_70qvk"]
 [ext_resource type="PackedScene" uid="uid://clmaxb7ykcgtb" path="res://Scenes/player.tscn" id="1_atxnc"]
 [ext_resource type="Texture2D" uid="uid://ct8uqc0hf4imn" path="res://Assets/Visual/GJ-bakgrunnur.png" id="1_w61iq"]
 [ext_resource type="PackedScene" uid="uid://5yow7ugv77wn" path="res://Scenes/spawner.tscn" id="3_j316c"]
+[ext_resource type="AudioStream" uid="uid://cpcehfetnvxyg" path="res://Assets/Audio/GGJ62Track.mp3" id="6_skk8j"]
 [ext_resource type="PackedScene" uid="uid://dpr6ywviuw68r" path="res://Scenes/modules/count_down.tscn" id="6_wavd1"]
 
 [node name="main" type="Node2D"]
@@ -19,3 +20,8 @@ position = Vector2(80, 40)
 [node name="spawner" parent="." instance=ExtResource("3_j316c")]
 
 [node name="count_down" parent="." instance=ExtResource("6_wavd1")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_skk8j")
+autoplay = true
+bus = &"Music"
