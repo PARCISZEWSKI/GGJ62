@@ -15,7 +15,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		get_tree().paused = false
 		queue_free()
-
+		
+func game_over(score):
+	$CanvasLayer/pause.text = "YOU LOST! Score: %s" % str(score)
 
 func _on_menu_button_down():
 	$AudioStreamPlayer.stream = sound.pick_random()

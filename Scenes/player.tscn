@@ -66,8 +66,8 @@ position_smoothing_speed = 10.0
 position = Vector2(8.25, 10.75)
 
 [node name="health" parent="." instance=ExtResource("6_4fcsm")]
-health_current = 1
-health_max = 100
+health_current = 50
+health_max = 50
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -15,7 +15,7 @@ func _process(_delta):
 	pass
 
 func change_text(text):
-	$CanvasLayer/pause.text = $CanvasLayer/pause.text + str(text)
+	$CanvasLayer/pause.text = $CanvasLayer/pause.text #+ str(text)
 
 func _on_menu_button_down():
 	$AudioStreamPlayer.stream = sound.pick_random()

@@ -22,15 +22,26 @@ animations = [{
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_vm6a4")
 
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_right = 11.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource("2_lknqd")
+text = "HP 00/00"
+
 [node name="Label2" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -20.0
+offset_left = -60.0
 offset_bottom = 18.0
 grow_horizontal = 0
 theme = ExtResource("2_lknqd")
-text = "Score: "
+text = "Score: 21"
 
 [node name="Label" type="Label" parent="."]
 offset_right = 20.0
@@ -39,6 +50,6 @@ theme = ExtResource("2_lknqd")
 text = "1"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(14, 9)
+position = Vector2(18, 9)
 scale = Vector2(1, 0.928571)
 sprite_frames = SubResource("SpriteFrames_xwp3n")

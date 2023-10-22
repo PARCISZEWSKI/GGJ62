@@ -33,6 +33,8 @@ func _on_timer_2_timeout():
 	level += 1
 	damage = damage * level
 	$Area2D/CollisionShape2D.scale = Vector2(1,1) * (0.5 * level + 1)
+	if level == 2:
+		$Area2D/CPUParticles2D.color = Color(0.862745, 0.0784314, 0.235294, 1)
 	if level == 3:
 		queue_free()
 	else:
@@ -44,5 +46,4 @@ func _on_timer_2_timeout():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if (event is InputEventMouseButton && event.pressed):
 		if event.button_index == 2:
-			
 			harvest()
