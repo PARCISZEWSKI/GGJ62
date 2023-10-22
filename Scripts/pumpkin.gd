@@ -2,8 +2,17 @@ extends Node2D
 
 var animation_list = ["default", "new_animation", "new_animation_1"]
 #signal damage(amount)
-@export var damage = 10
+@export var damage = 5
+var level = 0
+signal pressed
 
+
+func harvest():
+	if level == 3:
+		queue_free()
+		return true
+	else:
+		return false
 
 func _ready():
 	#$AnimatedSprite2D.animation = animation_list.pick_random()
@@ -17,3 +26,15 @@ func _on_timer_timeout():
 			#print(body)
 			body.take_damage(damage)
 			
+
+
+func _on_timer_2_timeout():
+	level += 1
+	damage = damage * level
+	$Area2D/CollisionShape2D.scale = Vector2(1,1) * (0.5 * level + 1)
+	if level == 3:
+		queue_free()
+	else:
+		$AnimatedSprite2D.frame = level
+
+

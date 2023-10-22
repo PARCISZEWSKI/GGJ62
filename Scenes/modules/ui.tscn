@@ -22,6 +22,16 @@ animations = [{
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_vm6a4")
 
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 18.0
+grow_horizontal = 0
+theme = ExtResource("2_lknqd")
+text = "Score: "
+
 [node name="Label" type="Label" parent="."]
 offset_right = 20.0
 offset_bottom = 18.0

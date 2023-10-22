@@ -54,7 +54,7 @@ script = ExtResource("1_m5b16")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uqnyb")
-animation = &"left"
+animation = &"front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
@@ -66,7 +66,7 @@ position_smoothing_speed = 10.0
 position = Vector2(8.25, 10.75)
 
 [node name="health" parent="." instance=ExtResource("6_4fcsm")]
-health_current = 100
+health_current = 1
 health_max = 100
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -85,4 +85,5 @@ position = Vector2(8, 11)
 stream = ExtResource("8_3bdev")
 bus = &"Effects"
 
+[connection signal="death" from="health" to="." method="_on_health_death"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

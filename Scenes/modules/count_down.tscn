@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpr6ywviuw68r"]
+[gd_scene load_steps=3 format=3 uid="uid://dpr6ywviuw68r"]
 
 [ext_resource type="Script" path="res://count_down.gd" id="1_f2whs"]
+[ext_resource type="Theme" uid="uid://dcn3fwgv8qlfn" path="res://Assets/main_theme.tres" id="1_grdab"]
 
 [node name="count_down" type="Control"]
 process_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_grdab")
 script = ExtResource("1_f2whs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

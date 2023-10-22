@@ -2,9 +2,12 @@ extends Node2D
 
 @onready var plant_1: PackedScene = preload("res://Scenes/pumpkin.tscn")
 @onready var pause_menu = preload("res://Scenes/pause_menu.tscn")
+@onready var over_menu = preload("res://Scenes/game_over.tscn")
 @onready var play_area = get_tree().get_first_node_in_group("background").texture.get_size()/2
 @export var scale_lean = 0.5
 @export var damage = 50
+var dead = false
+var score = 0
 
 const directions = [
 	"right",
@@ -31,6 +34,13 @@ func pause():
 	var ui = pause_menu.instantiate()
 	$Camera2D/ui.hide()
 	$Camera2D.add_child(ui)
+
+func game_over():
+	var ui = over_menu.instantiate()
+	ui.change_text(score)
+	$Camera2D/ui.hide()
+	$Camera2D.add_child(ui)
+	
 	
 func _ready():
 	$resource.resource_update.connect(_on_resource_update.bind())
@@ -57,15 +67,19 @@ func _process(delta):
 	if get_tree().paused == false:
 		$Camera2D/ui.show()
 	
-		if Input.is_action_just_pressed("mouse_one") and $resource.resource_spend(1):
+		if (Input.is_action_just_pressed("mouse_one") and $resource.resource_spend(-1)):
 			spawn(get_global_mouse_position())
 		if Input.is_action_just_pressed("escape"):
 			pause()#$Camera2D.add_child("")
 	else:
 		$Camera2D/ui.hide()
 	mouse_follow()
-func _on_resource_update(new):
+	
+func _on_resource_update(new, add):
+	if add > 0:
+		score += add
 	$Camera2D/ui.resource_text_update(new)
+	$Camera2D/ui.score_text_update(score)
 
 
 func _on_timer_timeout():
@@ -74,3 +88,10 @@ func _on_timer_timeout():
 			#print(body)
 			take_damage(body.damage)
 			body.take_damage(damage)
+
+
+func _on_health_death():
+	if !dead:
+		game_over()
+	#game_over()
+	

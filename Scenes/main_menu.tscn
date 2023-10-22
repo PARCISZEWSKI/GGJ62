@@ -54,5 +54,8 @@ text = "quits
 position = Vector2(84, 45)
 texture = ExtResource("3_7h6b7")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
 [connection signal="button_down" from="CanvasLayer/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/quit" to="." method="_on_quit_button_down"]

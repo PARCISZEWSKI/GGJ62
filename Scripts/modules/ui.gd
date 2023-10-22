@@ -10,5 +10,8 @@ func _ready():
 func _process(delta):
 	pass
 
+func score_text_update(amount):
+	$Label2.text = "Score: %s" % amount
 func resource_text_update(amount):
 	$Label.text = str(amount)
+	

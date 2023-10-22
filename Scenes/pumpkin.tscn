@@ -1,16 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8g4telmp04bq"]
+[gd_scene load_steps=11 format=3 uid="uid://b8g4telmp04bq"]
 
 [ext_resource type="Script" path="res://Scripts/pumpkin.gd" id="1_8iyh0"]
-[ext_resource type="Texture2D" uid="uid://dq1f7qbtbyhdl" path="res://Assets/Visual/GJ-grsker-ljóst.png" id="2_6vsjy"]
+[ext_resource type="Texture2D" uid="uid://c7m3yr5yoigs7" path="res://Assets/Visual/spritesheeet-1.png.png" id="2_8jib8"]
 [ext_resource type="Texture2D" uid="uid://ctyyvrkp5teyg" path="res://Assets/Visual/GJ-ber.png" id="3_sxcil"]
 [ext_resource type="Texture2D" uid="uid://ck56c8klivom2" path="res://Assets/Visual/GJ- scuass.png" id="4_ftwhl"]
 [ext_resource type="PackedScene" uid="uid://cibhbi00nyj8f" path="res://Scenes/modules/health.tscn" id="5_lg2jj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k38xf"]
+atlas = ExtResource("2_8jib8")
+region = Rect2(39, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_514mj"]
+atlas = ExtResource("2_8jib8")
+region = Rect2(56, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15yen"]
+atlas = ExtResource("2_8jib8")
+region = Rect2(73, 0, 17, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ik6j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6vsjy")
+"texture": SubResource("AtlasTexture_k38xf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_514mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15yen")
 }],
 "loop": true,
 "name": &"default",
@@ -35,7 +53,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmxm2"]
 
-[node name="pumpkin" type="Node2D"]
+[node name="pumpkin" type="Node2D" groups=["vegetable"]]
 script = ExtResource("1_8iyh0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -49,9 +67,27 @@ health_max = 100
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_lmxm2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Area2D"]
+position = Vector2(0, 4)
+lifetime = 0.3
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -20)
+initial_velocity_min = 10.1
+initial_velocity_max = 40.4
+color = Color(1, 0.635294, 0.301961, 1)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
