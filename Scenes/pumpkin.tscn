@@ -89,5 +89,6 @@ autostart = true
 [node name="Timer2" type="Timer" parent="."]
 autostart = true
 
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

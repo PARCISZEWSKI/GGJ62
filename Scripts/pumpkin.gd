@@ -4,11 +4,12 @@ var animation_list = ["default", "new_animation", "new_animation_1"]
 #signal damage(amount)
 @export var damage = 5
 var level = 0
-signal pressed
+signal harvested
 
 
 func harvest():
-	if level == 3:
+	if level == 2:
+		harvested.emit()
 		queue_free()
 		return true
 	else:
@@ -38,3 +39,10 @@ func _on_timer_2_timeout():
 		$AnimatedSprite2D.frame = level
 
 
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		if event.button_index == 2:
+			
+			harvest()
